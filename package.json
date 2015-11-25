@@ -2,9 +2,11 @@
   "name": "codecoverage-test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "test:cover": "babel-node node_modules/.bin/babel-istanbul cover _mocha",
+    "codecov": "cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js"
   },
   "author": "Jared Tong",
   "license": "ISC",
